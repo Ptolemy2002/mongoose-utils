@@ -41,13 +41,14 @@ Sets the specified options, overriding any existing options.
 - `this` - The instance of the class.
 
 ##### requireOptions<K extends keyof Options>
-Given the specified keys, ensures those options are set (not `undefined`). If this check fails, an `Error` will be thrown with a default message specifying which options are missing and your `customMessage` if specified.
+Given the specified keys, ensures those options are set (not `undefined`). If this check fails, an `Error` will be thrown with a default message specifying which options are missing and your `customMessage` if specified. You can modify the error to be thrown by specifying a third argument that is a function taking the final message and missing keys as arguments and returning the error to throw.
 
 The function acts as a type guard, returning the `options` instance with an alias to make the specified keys required.
 
 ###### Parameters
 - `keys` (`K[]`) - The keys to check for in the options.
 - `customMessage?` (`string`) - A custom message to display if the check fails.
+- `createError?` (`(message: string, missingKeys: K[]) => Error`) - A function to create the error to throw. By default creates a base `Error` with the message.
 
 ###### Returns
 - `Override<Options, { [key in K]: NonNullable<Options[key]> }>` - The options with the specified keys required.

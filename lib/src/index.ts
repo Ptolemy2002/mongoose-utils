@@ -28,15 +28,16 @@ export class AggregationBuilder<StageType extends string, Options={}> {
     }
 
     requireOptions<K extends keyof Options>(
-        keys: K[], customMessage?: string
+        keys: K[], customMessage?: string,
+        createError: (message: string, missingKeys: K[]) => Error = (message) => new Error(message)
     ) {
         const missingKeys = keys.filter(key => this.options[key] === undefined);
         if (missingKeys.length > 0) {
             const message = `Missing required options: ${missingKeys.join(", ")}`;
             if (customMessage) {
-                throw new Error(`${message}. ${customMessage}`);
+                throw createError(`${message}. ${customMessage}`, missingKeys);
             } else {
-                throw new Error(message);
+                throw createError(message, missingKeys);
             }
         }
 
