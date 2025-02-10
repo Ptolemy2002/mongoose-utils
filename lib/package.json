@@ -29,12 +29,12 @@
         "release-major": "bash ./scripts/release.sh major"
     },
     "peerDependencies": {
-        "@ptolemy2002/ts-utils": "^2.3.0",
+        "@ptolemy2002/ts-utils": "^3.0.0",
         "is-callable": "^1.2.7",
         "mongoose": "^8.9.3"
     },
     "devDependencies": {
-        "@ptolemy2002/ts-utils": "^2.3.0",
+        "@ptolemy2002/ts-utils": "^3.0.0",
         "@types/is-callable": "^1.1.2",
         "is-callable": "^1.2.7",
         "mongoose": "^8.9.3",

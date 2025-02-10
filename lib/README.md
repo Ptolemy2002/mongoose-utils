@@ -91,7 +91,7 @@ Given another `AggregationBuilder`, composes the two pipelines together, returni
 - `this` - The instance of the class.
 
 ## Peer Dependencies
-- `@ptolemy2002/ts-utils^2.3.0`
+- `@ptolemy2002/ts-utils^3.0.0`
 - `is-callable^1.2.7`
 - `mongoose^8.9.3`
 
