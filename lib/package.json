@@ -28,15 +28,15 @@
         "release-minor": "bash ./scripts/release.sh minor",
         "release-major": "bash ./scripts/release.sh major"
     },
+    "dependencies": {
+        "@ptolemy2002/ts-utils": "^4.0.0",
+        "is-callable": "^1.2.7"
+    },
     "peerDependencies": {
-        "@ptolemy2002/ts-utils": "^3.0.0",
-        "is-callable": "^1.2.7",
         "mongoose": "^8.9.3"
     },
     "devDependencies": {
-        "@ptolemy2002/ts-utils": "^3.0.0",
         "@types/is-callable": "^1.1.2",
-        "is-callable": "^1.2.7",
         "mongoose": "^8.9.3",
         "ts-patch": "^3.3.0",
         "tsconfig-paths": "^4.2.0",
